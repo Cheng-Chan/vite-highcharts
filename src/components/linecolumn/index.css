@@ -1,0 +1,9 @@
+.lineColumn{
+    display: flex;
+    width: 900px;
+    height: 570px;
+}
+.highcharts-container{
+    display: flex;
+    width: 900px !important;
+}
