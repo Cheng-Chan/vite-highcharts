@@ -1,10 +1,4 @@
-import Highcharts, { Options } from 'highcharts';
-import HighchartsReact from 'highcharts-react-official';
-import exporting from "highcharts/modules/exporting.js";
-
-import './index.css'
-
-exporting(Highcharts)
+import Chart from "../../charts/chart";
 
 const ColumnComparisonChart = () => {
   const data = [
@@ -39,7 +33,7 @@ const ColumnComparisonChart = () => {
     "◴"
   ]
 
-  const chartOptions: Options = {
+  const chartOptions = {
     chart: {
       type: "column"
     },
@@ -96,18 +90,12 @@ const ColumnComparisonChart = () => {
         text: 'MW'
       },
     },
-    exporting: {
-      allowHTML: true
-    }
   }
 
   return (
-    <div className='comparisonColumn'>
-      <HighchartsReact
-        highcharts={Highcharts}
-        options={chartOptions}
-      />
-    </div>
+    <Chart
+      ChartOptions={chartOptions}
+    />
   );
 };
 
