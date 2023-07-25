@@ -1,10 +1,4 @@
-import Highcharts, { Options } from 'highcharts';
-import HighchartsReact from 'highcharts-react-official';
-import exporting from "highcharts/modules/exporting.js";
-
-import './index.css';
-
-exporting(Highcharts)
+import Chart from "../../charts/chart";
 
 const LineColumn = () => {
 
@@ -53,7 +47,7 @@ const LineColumn = () => {
       ]
     }
 
-    const chartOptions: Options = {
+    const chartOptions = {
       chart: {
           type: 'xy'
       },
@@ -122,12 +116,9 @@ const LineColumn = () => {
     }
 
     return (
-      <div className='lineColumn'>
-        <HighchartsReact
-          highcharts={Highcharts}
-          options={chartOptions}
-        />
-      </div>
+      <Chart
+        ChartOptions={chartOptions}
+      />
     )
 
 };

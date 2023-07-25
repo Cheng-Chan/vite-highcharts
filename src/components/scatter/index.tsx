@@ -1,10 +1,4 @@
-import Highcharts, { Options } from 'highcharts';
-import HighchartsReact from 'highcharts-react-official';
-import exporting from "highcharts/modules/exporting.js";
-
-import './index.css';
-
-exporting(Highcharts);
+import Chart from "../../charts/chart";
 
 const Scatter = () => {
 
@@ -1065,7 +1059,8 @@ const Scatter = () => {
   data[2].type = 'scatter'
   data[3].type = 'scatter'
 
-  const chartOptions: Options = {
+
+  const chartOptions = {
     title: {
       text: 'Scatter plot with regression line'
     },
@@ -1104,21 +1099,13 @@ const Scatter = () => {
           }
         }
     },
-    series: [
-      data[0],
-      data[1],
-      data[2],
-      data[3],
-    ]
+    series: [data[0], data[1], data[2], data[3]]
   }
 
   return (
-    <div className='scatter'>
-      <HighchartsReact
-        highcharts={Highcharts}
-        options={chartOptions}
-      />
-    </div>
+    <Chart
+        ChartOptions={chartOptions}
+    />
   )
   
 };
